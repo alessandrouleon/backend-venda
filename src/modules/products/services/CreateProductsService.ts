@@ -4,7 +4,6 @@ import { ICreateProductsDTO } from "../dtos/IProductsDTO";
 import { Products } from "../infra/typeorm/entities/Products";
 import { IProductsRepository } from "../respositories/IProductsRepository";
 
-
 @injectable()
 class CreateProductsService {
 
