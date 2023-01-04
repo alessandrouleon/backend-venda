@@ -34,7 +34,7 @@ class ProductsController {
   }
 
 
-  public async searsh(request: Request, response: Response): Promise<Response> {
+  public async search(request: Request, response: Response): Promise<Response> {
     const { description } = request.query;
 
     const productsRepository = new ProductsRepository();

@@ -8,7 +8,7 @@ const productsController = new ProductsController();
 productsRoutes.post("/", productsController.create);
 productsRoutes.put("/:id", productsController.update);
 productsRoutes.get("/", productsController.index);
-productsRoutes.get("/searsh", productsController.searsh);
+productsRoutes.get("/search", productsController.search);
 productsRoutes.delete("/:id", productsController.delete);
 
 
