@@ -19,7 +19,7 @@ class Purchasings {
     // @JoinColumn({ name: 'id_product' })
     // product: Products;
     @Column()
-    id_product: string;
+    id_product: number;
 
     @CreateDateColumn()
     created_at: Date;

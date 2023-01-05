@@ -3,7 +3,7 @@ import { ICreatePurchasingsDTO, IPurchasingsPagination } from "../dots/IPurchasi
 import { Purchasings } from "../infra/typeorm/entities/Purchasings";
 
 interface IPurchasingsRepository {
-    findById(id: number): Promise<Purchasings>;
+    findById(id: number): Promise<Purchasings | undefined>;
     findByPurchasingNameSearch(status: string): Promise<(Purchasings | undefined)[] | undefined>;
     findAllPurchasingsWithoutPagination(): Promise<Purchasings[]>;
     findAllPaginatedPurchasings(page: number): Promise<IPurchasingsPagination>;

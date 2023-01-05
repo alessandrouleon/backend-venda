@@ -1,3 +1,4 @@
+import { Purchasings } from "../infra/typeorm/entities/Purchasings";
 
 interface ICreatePurchasingsDTO {
   total: number;
@@ -7,7 +8,7 @@ interface ICreatePurchasingsDTO {
 }
 
 interface IPurchasingsPagination {
-    purchasing: [];
+    purchasing: Purchasings [];
     totalPurchasings: number;
     totalPages: number;
 }
