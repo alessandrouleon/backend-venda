@@ -26,26 +26,35 @@ class PurchasingsRepository implements IPurchasingsRepository {
         return purchasing;
     }
 
-    public async findAllPurchasingsWithoutPagination(): Promise<Purchasings[]> {
-        throw new Error("Method not implemented.");
-    }
-    public async findAllPaginatedPurchasings(page: number): Promise<IPurchasingsPagination> {
-        throw new Error("Method not implemented.");
-    }
-    public async findAllPurchasings(): Promise<Purchasings[]> {
-        throw new Error("Method not implemented.");
+
+    public async findAllPaginatedPurchasings(page = 1): Promise<IPurchasingsPagination> {
+        const purchasing = await this.ormRepository.find({
+            order: { id: 'DESC' },
+            skip: (page - 1) * totalPerPage,
+            take: totalPerPage
+        });
+
+        const totalPurchasings = (await this.ormRepository.find()).length;
+
+        return {
+            purchasing,
+            totalPurchasings,
+            totalPages: totalPurchasings / totalPerPage
+        }
     }
 
+
     public async create(data: ICreatePurchasingsDTO): Promise<Purchasings> {
-      const purchasing = this.ormRepository.create(data);      
-      return await this.ormRepository.save(purchasing);
+        const purchasing = this.ormRepository.create(data);
+        return await this.ormRepository.save(purchasing);
     }
 
     public async update(data: Purchasings): Promise<Purchasings> {
-        throw new Error("Method not implemented.");
+        return await this.ormRepository.save(data);
     }
+
     public async delete(id: number): Promise<void> {
-        throw new Error("Method not implemented.");
+        await this.ormRepository.softDelete({ id });
     }
 
 }

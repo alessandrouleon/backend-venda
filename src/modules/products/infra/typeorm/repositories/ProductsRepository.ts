@@ -34,9 +34,6 @@ class ProductsRepository implements IProductsRepository {
         return product;
     }
 
-    public async findAllProductsWithoutPagination(): Promise<Products[]> {
-        return await this.ormRepository.find();
-    }
 
     public async findAllPaginatedProducts(page = 1): Promise<IProductsPagination> {
         const product = await this.ormRepository.find({
@@ -52,12 +49,6 @@ class ProductsRepository implements IProductsRepository {
             totalProducts,
             totalPages: totalProducts / totalPerPage,
         }
-    }
-
-    public async findAllProducts(): Promise<Products[]> {
-        return await this.ormRepository.find({
-            order: { id: 'DESC' }
-        });
     }
 
     public async create(data: ICreateProductsDTO): Promise<Products> {
