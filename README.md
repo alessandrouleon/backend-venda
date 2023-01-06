@@ -2,6 +2,9 @@
 # crud-backEnd-venda
 ## backend desenvolvido em node
 
-## Ultima branch atualizada feature/products.
+## Ultimas branchs atualizadas.
+
+## feature/products
+## feature/purchasings
 
 
