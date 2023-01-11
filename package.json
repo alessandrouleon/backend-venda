@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "repository": "https://github.com/alessandrouleon/crud-backend-venda.git",
-  "author": "alessandro.uleon <alessandro.uleon@grupoicts.com.br>",
+  "author": "alessandro.uleon <alessandrouleon85@gmail.com>",
   "license": "MIT",
   "scripts": {
     "start": "ts-node -r tsconfig-paths/register --files src/shared/infra/http/server.ts",
